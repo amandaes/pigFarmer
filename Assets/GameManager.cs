@@ -12,8 +12,8 @@ public class GameManager : MonoBehaviour {
     public GameObject enemyPrefab;
     public GameObject pigPrefab;
 
-    public float tileWidth = 0.1f;
-    public float tileHeight = 0.1f;
+    public float tileWidth = 1f;
+    public float tileHeight = 1f;
 
     public string levelFile = "levelfile.txt";
 
@@ -23,10 +23,11 @@ public class GameManager : MonoBehaviour {
 		
         string levelString = File.ReadAllText(Application.dataPath + Path.DirectorySeparatorChar + levelFile);
         string[] levelLines = levelString.Split('\n');
+        int width=0;
         for(int row = 0; row < levelLines.Length; row++)
         {
             string currentLine = levelLines[row];
-            tileWidth = currentLine.Length;
+            width = currentLine.Length;
             for (int col = 0; col < currentLine.Length; col++)
             {
                 char currentChar = currentLine[col];
@@ -54,9 +55,9 @@ public class GameManager : MonoBehaviour {
             }
         }
 
-        //float myX = -(width*tileWidth) / 2f + tileWidth / 2f;
-        //float myY = (levelLines.Length * tileHeight) / 2f - tileHeight / 2f;
-        //transform.position = new Vector3(myX, myY, 0);
+        float myX = -(width*tileWidth) / 2f + tileWidth / 2f;
+        float myY = (levelLines.Length * tileHeight) / 2f - tileHeight / 2f;
+        transform.position = new Vector3(myX, myY, 0);
     }
    
 }

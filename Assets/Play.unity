@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 13330939}
   - component: {fileID: 13330938}
   - component: {fileID: 13330937}
+  - component: {fileID: 13330941}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -194,6 +195,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &13330941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 13330936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca882ac42ac204341be46347da95e03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 4673284620823126, guid: 2eaafa0a811a4704d8128cf50dfaaea4, type: 2}
+  smoothTime: 0.3
+  posY: 1
+  xMax: 0.98
+  xMin: -0.98
+  yMax: 7
+  yMin: -9
 --- !u!1 &1361644168
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,10 +244,10 @@ MonoBehaviour:
     type: 2}
   groundPrefab: {fileID: 1652832854929188, guid: 109264e83acfbab479eb59abcac99dbe,
     type: 2}
-  enemyPrefab: {fileID: 1338248096151764, guid: a3a9e433448dfb44ba96d5cc9deb582a,
+  enemyPrefab: {fileID: 1613354504659582, guid: a3a9e433448dfb44ba96d5cc9deb582a,
     type: 2}
-  pigPrefab: {fileID: 1824950827837498, guid: eb682285273e88346993dfb327225efd, type: 2}
-  tileWidth: 0.1
+  pigPrefab: {fileID: 1794122051415490, guid: eb682285273e88346993dfb327225efd, type: 2}
+  tileWidth: 1
   tileHeight: 1
   levelFile: levelfile.txt
 --- !u!4 &1361644170
