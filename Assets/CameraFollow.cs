@@ -5,25 +5,23 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
 
-    public Transform target;
-    public float smoothTime = 0.3F;
-    public float posY;
+    public Transform objectToFollow;
 
-    //setting the max and min points where camera can go
-    public float xMax;
-    public float xMin;
-    public float yMax;
-    public float yMin;
+    public float moveSpeed = 10f;
 
+    // Use this for initialization
+    void Start()
+    {
 
-    private Vector3 velocity = Vector3.zero;
+    }
+
+    // Update is called once per frame
     void Update()
     {
-        Vector3 targetPosition = target.TransformPoint(new Vector3(0, posY, -10)); //making smooth camera movement to follow player
-        Vector3 desiredPosition = transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
-        transform.position = new Vector3(Mathf.Clamp(desiredPosition.x, xMin, xMax), Mathf.Clamp(desiredPosition.y, yMin, yMax), transform.position.z);
+        if (objectToFollow != null)
+        {
+            Vector2 targetPos = Vector2.Lerp(transform.position, objectToFollow.position, Time.deltaTime * moveSpeed);
+            transform.position = new Vector3(targetPos.x, targetPos.y, -10);
+        }
     }
 }
-
-
-

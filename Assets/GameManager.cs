@@ -60,4 +60,6 @@ public class GameManager : MonoBehaviour {
         transform.position = new Vector3(myX, myY, 0);
     }
    
+
+
 }
